@@ -4,10 +4,10 @@ import { Roboto_Mono } from 'next/font/google'
 const mono = Roboto_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'wasm-next',
-  description: 'wasm-next',
+  title: 'watcher',
+  description: 'Kismetdb wifi and ble snooper',
   icons: {
-    icon: '/icon.ico',
+    icon: '/icon.svg',
   },
 }
 
