@@ -2,9 +2,9 @@
 
   <h1><code>watcher</code></h1>
 
-  <strong>WiFi and BLE snooper service based on captured Kismet data</strong>
+<strong>WiFi and BLE snooper service based on captured Kismet data</strong>
 
-  <sub>Built with 🦀🕸 by <a href="https://rustwasm.github.io/">The Rust and WebAssembly Working Group</a></sub>
+<sub>Built with 🦀🕸 by <a href="https://rustwasm.github.io/">The Rust and WebAssembly Working Group</a></sub>
 </div>
 
 ## About
@@ -23,11 +23,4 @@ the data.
 
 Licensed under:
 
-* Apache License, Version 2.0, ([LICENSE_APACHE](LICENSE_APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
-
-### Contribution
-
-Unless you explicitly state otherwise, any contribution intentionally
-submitted for inclusion in the work by you, as defined in the Apache-2.0
-license, shall be dual licensed as above, without any additional terms or
-conditions.
+* MIT License, ([LICENSE](LICENSE) or https://opensource.org/license/mit)
