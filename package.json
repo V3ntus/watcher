@@ -8,10 +8,22 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.7.2",
+        "@fortawesome/free-brands-svg-icons": "^6.7.2",
+        "@fortawesome/free-regular-svg-icons": "^6.7.2",
+        "@fortawesome/free-solid-svg-icons": "^6.7.2",
+        "@fortawesome/react-fontawesome": "^0.2.2",
+        "@mantine/charts": "^7.16.2",
+        "@mantine/core": "^7.16.2",
+        "@mantine/dates": "^7.16.2",
+        "@mantine/hooks": "^7.16.2",
+        "@mantine/spotlight": "^7.16.2",
+        "dayjs": "^1.11.13",
         "next": "^15.0.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-select": "^5.8.0"
+        "react-select": "^5.8.0",
+        "recharts": "^2.15.1"
     },
     "devDependencies": {
         "@types/node": "^22.10.1",
@@ -19,6 +31,9 @@
         "@types/react-dom": "^18.0.9",
         "eslint": "^9.15.0",
         "eslint-config-next": "^15.0.3",
+        "postcss": "^8.5.1",
+        "postcss-preset-mantine": "^1.17.0",
+        "postcss-simple-vars": "^7.0.1",
         "typescript": "^5.7.2"
     }
 }
