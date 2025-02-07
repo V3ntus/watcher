@@ -5,7 +5,7 @@ import {Roboto_Mono} from 'next/font/google';
 
 import {ColorSchemeScript, MantineProvider, mantineHtmlProps} from '@mantine/core';
 import '@mantine/core/styles.css';
-import '@/app/globals.css';
+import './globals.css';
 
 import {config} from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
