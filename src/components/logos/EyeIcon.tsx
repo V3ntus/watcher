@@ -1,3 +1,4 @@
+"use client"
 // 2014 Alexander Madyankin, Roman Shamin, MIT <http://opensource.org/licenses/mit-license.php>, via Wikimedia Commons
 
 import * as React from "react"

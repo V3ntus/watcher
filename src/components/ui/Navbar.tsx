@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import {Center, Stack, Tooltip, UnstyledButton} from '@mantine/core';
 import classes from './Navbar.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -40,21 +39,18 @@ const mockdata = [
 ];
 
 export default function Navbar() {
-    const [active, setActive] = useState(2);
-
-    const links = mockdata.map((link, index) => (
+    const links = mockdata.map((link) => (
         <NavbarLink
             {...link}
             key={link.label}
-            active={index === active}
-            onClick={() => setActive(index)}
+            active={false}
         />
     ));
 
     return (
         <nav className={classes.navbar}>
             <Center>
-                <EyeIcon />
+                <EyeIcon/>
             </Center>
 
             <div className={classes.navbarMain}>

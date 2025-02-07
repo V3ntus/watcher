@@ -9,6 +9,7 @@ import './globals.css';
 
 import {config} from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import Navbar from "@/components/ui/Navbar";
 
 config.autoAddCss = false
 
@@ -26,10 +27,16 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="en" {...mantineHtmlProps}>
         <head>
+            <title>watcher</title>
             <ColorSchemeScript/>
         </head>
         <body className={mono.className}>
-        <MantineProvider defaultColorScheme="dark">{children}</MantineProvider>
+        <MantineProvider defaultColorScheme="dark">
+            <div className="flex w-full h-full">
+                <Navbar/>
+                {children}
+            </div>
+        </MantineProvider>
         </body>
         </html>
     )
