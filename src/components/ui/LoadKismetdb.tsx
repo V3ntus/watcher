@@ -8,13 +8,12 @@ function LoadKismetdbComponent() {
     const [file, setFile] = useState<File | null>(null);
 
     useEffect(() => {
-        // file?.arrayBuffer()?.then((v) => console.log(new Uint8Array(v)));
         fetch('@/../pkg/watcher_lib_bg.wasm').then(response => {
             return response.arrayBuffer();
         }).then(bytes => {
             if (file) {
                 wasm_js.initSync(bytes);
-                file.arrayBuffer()?.then((v) => console.log(wasm_js.load_kismetdb(new Uint8Array(v))));
+                file.arrayBuffer()?.then((v) => console.log(wasm_js.deserialize_kismetdb(new Uint8Array(v))));
             }
         });
     }, [file]);
