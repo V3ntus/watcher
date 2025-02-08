@@ -28,6 +28,30 @@ fn select_from<T: FromRow>(conn: &Connection, table: &str) -> Result<Vec<T>> {
     }).collect())
 }
 
+fn kismet_db_check(conn: &Connection) -> Result<u8> {
+    log::info!("Checking database version...");
+    match conn.prepare("SELECT db_version FROM KISMET") {
+        Ok(mut r) => {
+            let db_version: Result<u8> = r.query_row([], |row| {
+                Ok(row.get(0)?)
+            });
+            match db_version {
+                Ok(v) => {
+                    if (v >= 8) && (v <= 9) {
+                        Ok(v)
+                    } else {
+                        const DB_INCOMPATIBLE: &str = "Kismet log database version not compatible: db_version must be >= 8 && <=9";
+                        log::error!("{}", DB_INCOMPATIBLE);
+                        throw_str(DB_INCOMPATIBLE)
+                    }
+                }
+                Err(e) => throw_str(e.to_string().as_str()),
+            }
+        }
+        Err(_) => throw_str("Could not prepare Kismet log database check SQL statement")
+    }
+}
+
 pub fn load_kismetdb(db_bytes: &[u8]) -> Result<KismetLog> {
     log::info!("Deserializing sqlite byte array into memory...");
     let mut conn = Connection::open_in_memory().expect_throw("Could not open SQLite database in memory");
@@ -49,6 +73,8 @@ pub fn load_kismetdb(db_bytes: &[u8]) -> Result<KismetLog> {
                 true,
             )?;
     }
+
+    kismet_db_check(&conn).expect_throw("Unable to check Kismet log database version");
 
     let final_struct = KismetLog {
         data: select_from(&conn, "data")?,
