@@ -60,6 +60,7 @@ interface KistmetPacket {
     speed: number;
     heading: number;
     packet_len: number;
+    packet_len_full: number;
     signal: number;
     datasource: KismetDataSource;
     dlt: DLT;
