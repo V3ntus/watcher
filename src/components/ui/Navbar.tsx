@@ -1,5 +1,4 @@
 import {Center, Stack, Tooltip, UnstyledButton} from '@mantine/core';
-import classes from './Navbar.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
     faHome,
@@ -23,7 +22,7 @@ interface NavbarLinkProps {
 function NavbarLink({icon: Icon, label, active, onClick}: NavbarLinkProps) {
     return (
         <Tooltip label={label} position="right" transitionProps={{duration: 0}}>
-            <UnstyledButton onClick={onClick} className={classes.link} data-active={active || undefined}>
+            <UnstyledButton onClick={onClick} className="link" data-active={active || undefined}>
                 <FontAwesomeIcon size="lg" stroke="1.5" icon={Icon}/>
             </UnstyledButton>
         </Tooltip>
@@ -48,12 +47,13 @@ export default function Navbar() {
     ));
 
     return (
-        <nav className={classes.navbar}>
+        <nav
+            className="w-20 h-full p-(--mantine-spacing-md) flex flex-col navbar">
             <Center>
                 <EyeIcon/>
             </Center>
 
-            <div className={classes.navbarMain}>
+            <div className="flex-1 mt-[50px]">
                 <Stack justify="center" gap={0}>
                     {links}
                 </Stack>
